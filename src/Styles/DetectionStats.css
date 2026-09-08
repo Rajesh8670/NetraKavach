@@ -1,0 +1,182 @@
+/* ============================================
+   DETECTION STATS
+   ============================================ */
+.detection-stats {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr) 1.15fr;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.stat-box {
+  min-height: 110px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  padding: 18px 16px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  transition: all var(--transition-medium);
+  box-shadow: var(--shadow-card);
+  cursor: pointer;
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.stat-box::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg,
+      transparent 40%,
+      rgba(77, 163, 255, 0.04) 100%);
+  pointer-events: none;
+}
+
+.stat-box:hover {
+  border-color: var(--border-glow);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-card), var(--shadow-glow);
+}
+
+.stat-number {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  font-size: 28px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  color: var(--text-primary);
+  letter-spacing: 1px;
+}
+
+.stat-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 12px;
+  gap: 8px;
+}
+
+.stat-info i {
+  font-size: 28px;
+  color: var(--accent-blue);
+  filter: drop-shadow(0 0 8px rgba(77, 163, 255, 0.4));
+  transition: transform var(--transition-fast);
+}
+
+.stat-icon-image {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(77, 163, 255, 0.4));
+  transition: transform var(--transition-fast);
+}
+
+.stat-box:hover .stat-info i {
+  transform: scale(1.2);
+}
+
+.stat-box:hover .stat-icon-image {
+  transform: scale(1.2);
+}
+
+.stat-info h3 {
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+  color: var(--text-secondary);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.stat-box.suspicious-box {
+  border-color: rgba(255, 71, 87, 0.3);
+  background: linear-gradient(135deg,
+      rgba(30, 10, 18, 0.9),
+      rgba(13, 30, 48, 0.85));
+}
+
+.stat-box.suspicious-box .stat-info i {
+  color: var(--accent-red);
+  filter: drop-shadow(0 0 10px rgba(255, 71, 87, 0.5));
+}
+
+.stat-box.suspicious-box .stat-number {
+  color: var(--accent-red);
+}
+
+.stat-box.suspicious-box:hover {
+  border-color: rgba(255, 71, 87, 0.6);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 71, 87, 0.15);
+}
+
+.date-box {
+  min-height: 110px;
+  background: linear-gradient(135deg, #0d2b4a, #1a4a6e);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-medium);
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.date-box::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(0, 212, 255, 0.1), transparent 70%);
+  pointer-events: none;
+}
+
+.date-box:hover {
+  box-shadow: var(--shadow-card), var(--shadow-glow);
+  border-color: var(--border-glow);
+}
+
+.date-box div {
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  text-align: center;
+  gap: 2px;
+}
+
+.date-box div span {
+  color: var(--text-secondary);
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.date-box div strong {
+  font-family: var(--font-display);
+  font-size: 28px;
+  color: var(--accent-cyan);
+}
+
+.date-box i {
+  font-size: 32px;
+  color: var(--accent-cyan);
+  opacity: 0.8;
+  filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.3));
+}
+
+/* Animation delays */
+.stat-box:nth-child(1) { animation-delay: 0.05s; }
+.stat-box:nth-child(2) { animation-delay: 0.1s; }
+.stat-box:nth-child(3) { animation-delay: 0.15s; }
+.stat-box:nth-child(4) { animation-delay: 0.2s; }
+.stat-box:nth-child(5) { animation-delay: 0.25s; }
+.date-box { animation-delay: 0.3s; }

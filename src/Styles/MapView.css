@@ -1,0 +1,141 @@
+/* ============================================
+   MAP VIEW
+   ============================================ */
+.map-panel {
+  min-width: 0;
+}
+
+.map-container {
+  height: calc(100% - 48px);
+  min-height: 252px;
+  position: relative;
+  overflow: hidden;
+  background: #050b14;
+}
+
+.map-container img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s ease;
+  filter: brightness(0.8) saturate(1.1) contrast(1.05);
+}
+
+.map-panel:hover .map-container img {
+  transform: scale(1.04);
+}
+
+.map-container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom,
+      rgba(0, 15, 25, 0.1),
+      rgba(0, 15, 25, 0.3));
+  pointer-events: none;
+}
+
+.map-live {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 5;
+  background: rgba(5, 17, 29, 0.9);
+  border: 1px solid rgba(77, 163, 255, 0.3);
+  padding: 7px 12px;
+  font-size: 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.map-live span {
+  width: 7px;
+  height: 7px;
+  background: var(--accent-green);
+  border-radius: 50%;
+  animation: livePulse 1.5s ease-in-out infinite;
+}
+
+.map-controls {
+  position: absolute;
+  z-index: 5;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.map-controls button {
+  width: 34px;
+  height: 34px;
+  background: rgba(8, 25, 42, 0.92);
+  border: 1px solid rgba(77, 163, 255, 0.25);
+  color: var(--text-primary);
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.map-controls button:hover {
+  background: rgba(26, 139, 160, 0.5);
+  border-color: var(--accent-cyan);
+  transform: scale(1.1);
+}
+
+.map-legend {
+  position: absolute;
+  z-index: 5;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  min-height: 36px;
+  background: rgba(5, 17, 29, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 10px;
+  color: var(--text-secondary);
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(77, 163, 255, 0.1);
+  padding: 4px 8px;
+  flex-wrap: wrap;
+}
+
+.map-legend span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 500;
+}
+
+.camera-marker {
+  color: var(--accent-blue);
+}
+.alert-marker {
+  color: var(--accent-red);
+}
+.vehicle-marker {
+  color: var(--accent-yellow);
+}
+.checkpoint-marker {
+  color: var(--accent-green);
+}

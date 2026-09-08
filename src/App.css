@@ -1,0 +1,106 @@
+/* Reserve the fixed header and sidebar space for the dashboard content. */
+.main-content {
+	margin-left: var(--sidebar-width);
+	margin-top: var(--header-height);
+	padding: 22px;
+	min-height: calc(100vh - var(--header-height));
+	background: var(--bg-primary);
+	position: relative;
+	z-index: 1;
+}
+
+@media (max-width: 1500px) {
+	.bottom-grid {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.map-panel {
+		grid-column: span 1;
+	}
+
+	.camera-image {
+		height: 260px;
+	}
+}
+
+@media (max-width: 1150px) {
+	.detection-stats {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.camera-section {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.header-time {
+		display: none;
+	}
+}
+
+@media (max-width: 850px) {
+	:root {
+		--sidebar-width: 70px;
+	}
+
+	.sidebar {
+		width: var(--sidebar-width);
+	}
+
+	.sidebar span {
+		display: none;
+	}
+
+	.sidebar a {
+		justify-content: center;
+		padding: 18px 5px;
+	}
+
+	.main-content {
+		margin-left: var(--sidebar-width);
+	}
+
+	.camera-section,
+	.bottom-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.bottom-grid .map-panel {
+		grid-column: auto;
+	}
+
+	.brand-text p,
+	.admin-details,
+	.admin-profile > i {
+		display: none;
+	}
+}
+
+@media (max-width: 600px) {
+	.top-header {
+		padding: 0 15px;
+	}
+
+	.brand-text h1 {
+		font-size: 30px;
+	}
+
+	.brand-icon i {
+		font-size: 22px;
+	}
+
+	.main-content {
+		padding: 15px 10px;
+	}
+
+	.detection-stats {
+		grid-template-columns: 1fr;
+	}
+
+	.analysis-content {
+		flex-direction: column;
+	}
+
+	.header-right {
+		gap: 10px;
+	}
+}

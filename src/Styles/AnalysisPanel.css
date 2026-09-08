@@ -1,0 +1,122 @@
+/* ============================================
+   DETECTION ANALYSIS PANEL
+   ============================================ */
+.analysis-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 22px 18px;
+  position: relative;
+  z-index: 2;
+}
+
+.donut-chart {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  position: relative;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 20px rgba(77, 163, 255, 0.2));
+  transition: transform var(--transition-medium);
+}
+
+.dashboard-panel:hover .donut-chart {
+  transform: scale(1.05);
+}
+
+.donut-chart svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+  border-radius: 50%;
+}
+
+.donut-chart circle {
+  fill: none;
+  stroke-width: 28;
+  transition: stroke-dashoffset 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.chart-center {
+  position: absolute;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 35%, #1a2d44, #0d1e30);
+  color: #f0f5fa;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 2px 15px rgba(0, 0, 0, 0.4), 0 0 0 2px rgba(77, 163, 255, 0.2);
+}
+
+.chart-center strong {
+  font-size: 30px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  color: var(--accent-cyan);
+  line-height: 1;
+}
+
+.chart-center span {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 3px;
+}
+
+.analysis-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.analysis-legend div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  transition: transform var(--transition-fast);
+}
+
+.analysis-legend div:hover {
+  transform: translateX(4px);
+  color: var(--text-primary);
+}
+
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.legend-dot.people {
+  background: #4da3ff;
+  box-shadow: 0 0 10px rgba(77, 163, 255, 0.5);
+}
+.legend-dot.cars {
+  background: #3ddc84;
+  box-shadow: 0 0 10px rgba(61, 220, 132, 0.5);
+}
+.legend-dot.trucks {
+  background: #ff6b35;
+  box-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
+}
+.legend-dot.drones {
+  background: #feca57;
+  box-shadow: 0 0 10px rgba(254, 202, 87, 0.5);
+}
+.legend-dot.suspicious {
+  background: #ff4757;
+  box-shadow: 0 0 10px rgba(255, 71, 87, 0.5);
+}

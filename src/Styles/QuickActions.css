@@ -1,0 +1,66 @@
+/* ============================================
+   QUICK ACTIONS
+   ============================================ */
+.quick-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px;
+  position: relative;
+  z-index: 2;
+}
+
+.quick-actions button {
+  height: 56px;
+  background: linear-gradient(90deg, rgba(26, 59, 87, 0.8), rgba(16, 34, 53, 0.9));
+  border: 1px solid rgba(77, 163, 255, 0.2);
+  border-radius: var(--border-radius-sm);
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  padding: 0 18px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.3px;
+  font-family: var(--font-body);
+}
+
+.quick-actions button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(77, 163, 255, 0.12), transparent);
+  transition: left var(--transition-slow);
+}
+
+.quick-actions button:hover::before {
+  left: 100%;
+}
+
+.quick-actions button:hover {
+  background: linear-gradient(90deg, rgba(40, 80, 110, 0.9), rgba(20, 45, 70, 0.95));
+  border-color: var(--accent-cyan);
+  transform: translateX(4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.quick-actions button:active {
+  transform: translateX(2px) scale(0.98);
+}
+
+.quick-actions i {
+  font-size: 20px;
+  margin-right: 16px;
+  color: var(--accent-cyan);
+  transition: transform var(--transition-fast);
+}
+
+.quick-actions button:hover i {
+  transform: scale(1.2);
+}
