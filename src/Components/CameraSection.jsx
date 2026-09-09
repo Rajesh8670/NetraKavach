@@ -20,7 +20,7 @@ const cameras = [
     id: 3,
     title: 'Border Checkpost - Sector 5',
     time: '05 Sep 2026 10:41:33',
-    video: '/screen1.mp4',
+    video: '/screen3.mp4',
     poster: '/camera3.png',
   },
 ];

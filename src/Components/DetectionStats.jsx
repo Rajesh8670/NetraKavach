@@ -1,21 +1,22 @@
 import React from 'react';
 import '../Styles/DetectionStats.css'
+import detectionData from '../data/detectionData';
 
-
-const stats = [
-  { number: 25, icon: 'fa-users', label: 'Person Detected', suspicious: false },
-  { number: 9, icon: 'fa-truck', label: 'Truck Detected', suspicious: false },
-  { number: 12, icon: 'fa-car', label: 'Cars Detected', suspicious: false },
-  { number: 4, image: '/drone.png', label: 'Drones Detected', suspicious: false },
-  { number: 2, icon: 'fa-triangle-exclamation', label: 'Suspicious Activity', suspicious: true },
-];
+const stats = Object.entries(detectionData).map(([id, item]) => ({
+  id,
+  number: item.value,
+  icon: item.icon,
+  image: item.image,
+  label: item.statusLabel,
+  suspicious: item.suspicious,
+}));
 
 const DetectionStats = () => {
   return (
     <section className="detection-stats">
       {stats.map((stat, index) => (
         <div
-          key={index}
+          key={stat.id}
           className={`stat-box ${stat.suspicious ? 'suspicious-box' : ''}`}
         >
           <div className="stat-number">{stat.number}</div>

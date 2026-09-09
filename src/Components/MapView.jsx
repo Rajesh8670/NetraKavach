@@ -10,10 +10,15 @@ const MapView = () => {
         </h2>
       </div>
       <div className="map-container">
-        <img
-          src="/mapview.png"
-          alt="Live Border Tracking Map"
-        />
+            <video
+              src='/mapview.mp4'
+              
+              autoPlay
+              loop
+              muted
+              playsInline
+              
+            />
         <div className="map-live">
           <span></span> LIVE TRACKING
         </div>
