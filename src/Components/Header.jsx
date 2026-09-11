@@ -9,8 +9,8 @@ const Header = () => {
           <i className="fa-solid fa-shield-halved"></i>
         </div>
         <div className="brand-text">
-          <h1>IBAP</h1>
-          <p>Intelligent Border Video Analytics</p>
+          <h1>NETRA KAVACH</h1>
+          <p>AI-POWERED BORDER SURVEILLANCE</p>
         </div>
       </div>
 

@@ -51,7 +51,7 @@ const Login = ({ onLogin }) => {
               <i className="fa-solid fa-shield-halved" />
             </div>
             <div>
-              <h1>IBVAP</h1>
+              <h1>NETRA KAVACH</h1>
               <h2>INTELLIGENT BORDER<br />VIDEO ANALYTICS PLATFORM</h2>
             </div>
           </div>

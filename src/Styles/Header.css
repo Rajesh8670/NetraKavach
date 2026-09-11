@@ -65,7 +65,7 @@
 
 .brand-text h1 {
   font-family: var(--font-display);
-  font-size: 36px;
+  font-size: 30px;
   font-weight: 700;
   letter-spacing: 2px;
   background: linear-gradient(135deg, #f0f5fa 0%, #4da3ff 100%);
