@@ -1,5 +1,6 @@
 import React from 'react';
 import '../Styles/ActiveSystems.css'
+import detectionData from '../data/detectionData';
 
 const ActiveSystems = () => {
   return (
@@ -12,7 +13,7 @@ const ActiveSystems = () => {
       <div className="active-systems">
         <div className="system-item">
           <div>
-            <i className="fa-solid fa-plane"></i> Drones
+            <img className="system-icon-image" src={detectionData.drones.image} alt="" /> Drones
           </div>
           <strong>4</strong>
         </div>

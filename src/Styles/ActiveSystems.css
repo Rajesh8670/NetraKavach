@@ -43,6 +43,13 @@
   color: var(--accent-blue);
 }
 
+.system-icon-image {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 6px rgba(77, 163, 255, 0.4));
+}
+
 .system-on {
   color: var(--accent-green) !important;
   font-weight: 700 !important;
