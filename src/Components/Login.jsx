@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PrototypeNotice from './PrototypeNotice';
 import '../Styles/Login.css';
 
 const features = [
@@ -125,6 +126,7 @@ const Login = ({ onLogin }) => {
               <i className="fa-solid fa-shield-halved" />
               SECURE LOGIN
             </button>
+            <p className="login-demo-access">Demo access: Enter any username and password</p>
 
             <div className="login-or">OR</div>
             <button type="button" className="login-twofa" onClick={() => setError('Two-factor authentication is not configured yet.')}>
@@ -138,6 +140,8 @@ const Login = ({ onLogin }) => {
           </form>
         </section>
       </main>
+
+      <PrototypeNotice />
 
       <div className="login-footer">
         IBVAP v1.0.0<br />
